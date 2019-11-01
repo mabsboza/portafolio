@@ -39,7 +39,6 @@ Copyright (c) 2018 - mital_04
        }
       });
     }
-
     /*--------------------
         * Smooth Scroll
     ----------------------*/
@@ -85,6 +84,14 @@ Copyright (c) 2018 - mital_04
           }
         });
     }
+
+    $(".popup").click(function () {
+      var $this = $(this);
+      var $iframe = $("<iframe>").attr("src", $this.data("link")).css({"width": 400, "height": 300, "z-index":2});
+      var $title = $("<h1>").text($this.data("title"));
+      $("#video-view").html($title).append($iframe);
+      $iframe.wrap("<div class='popup-video theme-color'>");
+    });
 
     /*--------------------
     * Counter JS
